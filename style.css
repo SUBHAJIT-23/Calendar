@@ -1,0 +1,162 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.wrapper
+{
+  width: 450px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(17, 153, 142, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #1a1a1a;
+}
+
+.wrapper header
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 30px 10px;
+}
+
+header .current-date
+{
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+header .icons
+{
+  display: flex;
+}
+
+header .icons span
+{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #1a1a1a;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+header .icons span:hover
+{
+  background: rgba(110, 44, 0, 0.1);
+  color: #4e342e;
+  box-shadow: 0 0 6px rgba(110, 44, 0, 0.2);
+}
+
+.calendar
+{
+  padding: 20px;
+}
+
+.calendar ul
+{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendar .weeks li
+{
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: default;
+}
+
+.calendar .days
+{
+  margin-bottom: 20px;
+}
+
+.calendar li
+{
+  width: calc(100% / 7);
+  font-size: 1.05rem;
+}
+
+.calendar .days li
+{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+  color: #222;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.days li.inactive
+{
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.days li.active
+{
+  color: #fff;
+  font-weight: 600;
+  transform: scale(1.1);
+  text-shadow: 0 0 8px rgba(110, 44, 0, 0.6);
+}
+
+.days li::before
+{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🌰 Active day – rich dark wood brown */
+.days li.active::before
+{
+  background: linear-gradient(135deg, #4e342e, #3e2723);
+  box-shadow: 0 0 12px rgba(78, 52, 46, 0.7);
+}
+
+/* 🍂 Hover effect – 10% of that tone */
+.days li:not(.active):hover::before
+{
+  background: rgba(78, 52, 46, 0.1);
+  box-shadow: 0 0 6px rgba(78, 52, 46, 0.2);
+}
+
+.days li:not(.active):hover
+{
+  color: #3e2723;
+  transform: scale(1.05);
+}
