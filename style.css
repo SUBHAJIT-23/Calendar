@@ -1,12 +1,9 @@
-/* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
 * 
 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: cursive;
 }
 
 body
@@ -141,14 +138,12 @@ header .icons span:hover
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🌰 Active day – rich dark wood brown */
 .days li.active::before
 {
   background: linear-gradient(135deg, #4e342e, #3e2723);
   box-shadow: 0 0 12px rgba(78, 52, 46, 0.7);
 }
 
-/* 🍂 Hover effect – 10% of that tone */
 .days li:not(.active):hover::before
 {
   background: rgba(78, 52, 46, 0.1);
